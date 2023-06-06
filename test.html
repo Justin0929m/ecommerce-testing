@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="test2.html">test 2</a>
+
+    <input type="text" id="textInput">
+    <input type="text" id="textDataInput">
+    <button onclick="addData()">Submit</button>
+
+    <script>
+        // debugger
+      let testArr = [
+        {
+          id: Math.floor(Math.random().toFixed(2) * 10000),
+          title: "title 1",
+          text: "text one",
+        },
+        {
+          id: Math.floor(Math.random().toFixed(2) * 10000),
+          title: "title 2",
+          text: "text two",
+        },
+        {
+          id: Math.floor(Math.random().toFixed(2) * 10000),
+          title: "title 3",
+          text: "text three",
+        },
+        {
+          id: Math.floor(Math.random().toFixed(2) * 10000),
+          title: "It Worked!!",
+          text: "100%",
+        },
+        {
+          id: Math.floor(Math.random().toFixed(2) * 10000),
+          title: "Hired!",
+          text: "front end developer",
+        },
+      ];
+
+      
+      let text = document.querySelector('#textInput')
+      let text2 = document.querySelector('#textDataInput')
+      let testData = localStorage.setItem("data", JSON.stringify(testArr));
+
+      function addData(){
+        testArr.push({
+            id: Date.now(),
+            title: text.value,
+            text: text2.value
+        })
+
+      }
+    </script>
+  </body>
+</html>
